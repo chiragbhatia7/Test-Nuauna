@@ -16,14 +16,16 @@ const Search = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title="Search A Product -- ECOMMERCE" />
-      <form className="searchBox" onSubmit={searchSubmitHandler}>
+      <MetaData title="NUAUNA - Search" />
+      <form className="search-box" onSubmit={searchSubmitHandler}>
         <input
           type="text"
           placeholder="Search a Product ..."
           onChange={(e) => setKeyword(e.target.value)}
         />
-        <input type="submit" value="Search" />
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i> Search
+        </button>
       </form>
     </Fragment>
   );
