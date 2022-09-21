@@ -52,33 +52,33 @@ const ProductList = ({ history }) => {
   }, [dispatch, alert, error, deleteError, history, isDeleted]);
 
   const columns = [
-    { field: "id", headerName: "Product ID", minWidth: 200, flex: 0.5 },
+    { field: "id", headerName: "Product id", minWidth: 150, flex: 0.5 },
 
     {
       field: "name",
       headerName: "Name",
-      minWidth: 350,
-      flex: 1,
+      minWidth: 150,
+      flex: 0.5,
     },
     {
       field: "stock",
       headerName: "Stock",
       type: "number",
       minWidth: 150,
-      flex: 0.3,
+      flex: 0.5,
     },
 
     {
       field: "price",
       headerName: "Price",
       type: "number",
-      minWidth: 270,
+      minWidth: 150,
       flex: 0.5,
     },
 
     {
       field: "actions",
-      flex: 0.3,
+      flex: 0.5,
       headerName: "Actions",
       minWidth: 150,
       type: "number",
@@ -109,7 +109,7 @@ const ProductList = ({ history }) => {
     products.forEach((item) => {
       rows.push({
         id: item._id,
-        stock: item.Stock,
+        stock: item.stock,
         price: item.price,
         name: item.name,
       });
@@ -117,21 +117,21 @@ const ProductList = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title={`ALL PRODUCTS - Admin`} />
-
       <div className="dashboard">
+        <MetaData title="NUAUNA - Admin Panel" />
         <SideBar />
-        <div className="productListContainer">
-          <h1 id="productListHeading">ALL PRODUCTS</h1>
-
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            pageSize={10}
-            disableSelectionOnClick
-            className="productListTable"
-            autoHeight
-          />
+        <div className="product-list-container">
+          <h1>Products</h1>
+          <div className="product-list">
+            <DataGrid
+              rows={rows}
+              columns={columns}
+              pageSize={10} 
+              disableSelectionOnClick
+              className="product-list-table"
+              autoHeight
+            />
+          </div>
         </div>
       </div>
     </Fragment>

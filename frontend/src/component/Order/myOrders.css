@@ -38,17 +38,15 @@
 }
 
 .myOrdersTable a:hover {
-  color: tomato;
+  color: black;
 }
 
 .MuiDataGrid-columnHeader {
-  background-color: tomato;
-  padding: 1vmax !important;
+  background-color: white;
 }
 
 .MuiDataGrid-columnHeader div {
   color: rgb(255, 255, 255);
-  font: 500 1.1vmax "Roboto" !important;
 }
 
 .MuiDataGrid-iconSeparator {
@@ -60,21 +58,7 @@
     padding: 0;
     height: 93vh;
   }
-
-  #myOrdersHeading {
-    font: 400 2.2vmax "Roboto";
-    padding: 4vw;
-  }
-
-  .myOrdersTable div {
-    font: 300 4vw "Roboto";
-  }
-
   .MuiDataGrid-columnHeader {
     padding: 20px !important;
-  }
-
-  .MuiDataGrid-columnHeader div {
-    font: 500 5vw "Roboto" !important;
   }
 }
