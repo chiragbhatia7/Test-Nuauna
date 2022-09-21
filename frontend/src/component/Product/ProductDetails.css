@@ -16,7 +16,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 150px 150px 150px 0;
 }
 .product-details-right h1 {
@@ -73,41 +73,15 @@
   padding: 15px;
   margin-top: 15px;
 }
-.submitReview {
-  border: none;
-  background-color: tomato;
-  font: 500 0.7vmax "Roboto";
-  border-radius: 20px;
-  padding: 0.6vmax 2vmax;
-  margin: 1vmax 0;
-  color: white;
-  cursor: pointer;
-  transition: all 0.5s;
-  outline: none;
-}
-.submitReview:hover {
-  background-color: rgb(197, 68, 45);
-  transform: scale(1.1);
-}
-
-.submitDialog {
+.submit-dialogue {
   display: flex;
   flex-direction: column;
 }
-.submitDialogTextArea {
-  border: 1px solid rgba(0, 0, 0, 0.082);
-  margin: 1vmax 0;
+.submit-dialogue-text-area {
+  border: 1px solid black;
+  margin: 20px 0;
   outline: none;
-  padding: 1rem;
-  font: 300 1rem "Roboto";
-}
-@media (max-width: 600px) {
-  .submitReview {
-    font: 500 1.7vmax "Roboto";
-    padding: 1.5vmax;
-    width: 20vmax;
-    margin: 3vmax 0;
-  }
+  padding: 20px;
 }
 @media (max-width: 1300px) {
   .product-details {

@@ -1,41 +1,26 @@
 .sidebar {
-  background-color: rgb(255, 255, 255);
+  width: 20%;
+  padding: 100px 0;
+  background-color: black;
+  color: white;
+  height: auto;
   display: flex;
   flex-direction: column;
-  padding: 4rem 0;
+  align-items: center;
 }
-
-.sidebar > a:first-child {
-  padding: 0;
+.sidebar-links {
+  margin-top: 100px;
 }
-.sidebar > a > img {
-  width: 100%;
-  transition: all 0.5s;
-}
-
-.sidebar > a > img:hover {
-  filter: drop-shadow(0 0 10px tomato);
+.sidebar p{
+  font-size: 24px;
+  margin: 20px;
 }
 .sidebar a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.493);
-  font: 200 1rem "Roboto";
-  padding: 2rem;
-  transition: all 0.5s;
+  color: white;
 }
-.sidebar a:hover {
-  color: tomato;
-  transform: scale(1.1);
-}
-
-.sidebar a > P {
-  display: flex;
-  align-items: center;
-}
-.sidebar a > p > svg {
-  margin-right: 0.5rem;
-}
-
-.MuiTypography-root {
-  background-color: #fff !important;
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 100%;
+  }
 }

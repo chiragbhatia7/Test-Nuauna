@@ -26,11 +26,11 @@ const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { product, loading, error } = useSelector(
+  const {product, loading, error } = useSelector(
     (state) => state.productDetails
   );
 
-  const { success, error: reviewError } = useSelector(
+  const {success, error: reviewError } = useSelector(
     (state) => state.newReview
   );
 
@@ -136,11 +136,11 @@ const ProductDetails = ({ match }) => {
               <div className="product-units-and-cart">
                 <span>
                   <button className="minus-btn" onClick={decreaseQuantity}>
-                    -
+                    <i class="fa-solid fa-minus"></i>
                   </button>
                   <input readOnly type="number" value={quantity}></input>
                   <button className="plus-btn" onClick={increaseQuantity}>
-                    +
+                    <i class="fa-solid fa-plus"></i>
                   </button>
                 </span>
                 <span>
@@ -177,7 +177,7 @@ const ProductDetails = ({ match }) => {
               onClose={submitReviewToggle}
             >
               <DialogTitle>Submit Review</DialogTitle>
-              <DialogContent className="submitDialog">
+              <DialogContent className="submit-dialogue">
                 <Rating
                   onChange={(e) => setRating(e.target.value)}
                   value={rating}
@@ -185,7 +185,7 @@ const ProductDetails = ({ match }) => {
                 />
 
                 <textarea
-                  className="submitDialogTextArea"
+                  className="submit-dialogue-text-area"
                   cols="30"
                   rows="5"
                   value={comment}

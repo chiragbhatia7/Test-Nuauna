@@ -20,9 +20,3 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-.greenColor {
-  color: green !important;
-}
-.redColor {
-  color: red !important;
-}

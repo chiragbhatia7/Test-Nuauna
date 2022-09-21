@@ -23,7 +23,7 @@ const Dashboard = () => {
 
   products &&
     products.forEach((item) => {
-      if (item.Stock === 0) {
+      if (item.stock === 0) {
         outOfStock += 1;
       }
     });
@@ -44,60 +44,58 @@ const Dashboard = () => {
     labels: ["Initial Amount", "Amount Earned"],
     datasets: [
       {
-        label: "TOTAL AMOUNT",
-        backgroundColor: ["tomato"],
-        hoverBackgroundColor: ["rgb(197, 72, 49)"],
+        label: "Sale",
+        backgroundColor: ["black"],
+        hoverBackgroundColor: ["rgb(0, 0, 0)"],
         data: [0, totalAmount],
       },
     ],
   };
 
   const doughnutState = {
-    labels: ["Out of Stock", "InStock"],
+    labels: ["Out Of Stock", "In Stock"],
     datasets: [
       {
-        backgroundColor: ["#00A6B4", "#6800B4"],
-        hoverBackgroundColor: ["#4B5000", "#35014F"],
+        backgroundColor: ["gray", "black"],
+        hoverBackgroundColor: ["white", "white"],
         data: [outOfStock, products.length - outOfStock],
       },
     ],
   };
-
   return (
     <div className="dashboard">
-      <MetaData title="Dashboard - Admin Panel" />
+      <MetaData title="NUAUNA - Admin Panel" />
       <Sidebar />
-
-      <div className="dashboardContainer">
-        <Typography component="h1">Dashboard</Typography>
-
-        <div className="dashboardSummary">
-          <div>
-            <p>
-              Total Amount <br /> ₹{totalAmount}
-            </p>
+      <div className="dashboard-container">
+        <h1>Dashboard</h1>
+        <div className="dashboard-summary">
+          <div className="stats-box">
+            <p>Total Sale</p>
+            <h1>₹{totalAmount}</h1>
           </div>
-          <div className="dashboardSummaryBox2">
+          <div className="stats-box">
             <Link to="/admin/products">
-              <p>Product</p>
-              <p>{products && products.length}</p>
+              <p>Products</p>
+              <h1>{products && products.length}</h1>
             </Link>
+          </div>
+          <div className="stats-box">
             <Link to="/admin/orders">
               <p>Orders</p>
-              <p>{orders && orders.length}</p>
+              <h1>{orders && orders.length}</h1>
             </Link>
+          </div>
+          <div className="stats-box">
             <Link to="/admin/users">
               <p>Users</p>
-              <p>{users && users.length}</p>
+              <h1>{users && users.length}</h1>
             </Link>
           </div>
         </div>
-
-        <div className="lineChart">
+        <div className="line-chart">
           <Line data={lineState} />
         </div>
-
-        <div className="doughnutChart">
+        <div className="doughnut-chart">
           <Doughnut data={doughnutState} />
         </div>
       </div>
