@@ -1,137 +1,96 @@
-.newProductContainer {
-  width: 100%;
-  box-sizing: border-box;
-  background-color: rgb(221, 221, 221);
-  border-left: 1px solid rgba(0, 0, 0, 0.158);
+.dashboard {
+  display: flex;
+  justify-content: center;
+}
+.dashboard h1 {
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.create-product-dashboard-container {
+  background-color: white;
+  padding: 100px;
+  width: 80%;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
-.newProductContainer h1 {
-  color: rgba(0, 0, 0, 0.733);
-  font: 300 2rem "Roboto";
-  text-align: center;
-}
-
-.createProductForm {
+.create-product-form {
+  margin: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
-  padding: 3vmax;
   justify-content: space-evenly;
-  height: 70%;
-  width: 40vh;
+  width: 50%;
+  min-height: auto;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
 }
-
-.createProductForm > div {
+.create-product-form > div {
   display: flex;
-  width: 100%;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  margin: 20px;
 }
-.createProductForm > div > input,
-.createProductForm > div > select,
-.createProductForm > div > textarea {
-  padding: 1vmax 4vmax;
-  padding-right: 1vmax;
+.create-product-form > div > input,
+.create-product-form > div > select,
+.create-product-form > div > textarea {
+  padding: 20px;
+  margin: 10px;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.267);
+  border: 1px solid black;
   border-radius: 4px;
-  font: 300 0.9vmax cursive;
   outline: none;
 }
-
-.createProductForm > div > svg {
-  position: absolute;
-  transform: translateX(1vmax);
-  font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
-}
-
-#createProductFormFile > input {
-  display: flex;
-  padding: 0%;
-}
-
-#createProductFormFile > input::file-selector-button {
+#create-product-form-file > input::file-selector-button {
   cursor: pointer;
-  width: 100%;
+  width: 75%;
   z-index: 2;
-  height: 5vh;
   border: none;
-  margin: 0%;
-  font: 400 0.8vmax cursive;
   transition: all 0.5s;
-  padding: 0 1vmax;
-  color: rgba(0, 0, 0, 0.623);
-  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  color: black;
+  background-color: white;
 }
 
-#createProductFormFile > input::file-selector-button:hover {
-  background-color: rgb(235, 235, 235);
+#create-product-form-file > input::file-selector-button:hover {
+  background-color: black;
+  color: white;
 }
 
-#createProductFormImage {
+#create-product-form-image {
   width: 100%;
   overflow: auto;
 }
 
-#createProductFormImage > img {
-  width: 3vmax;
-  margin: 0 0.5vmax;
+#create-product-form-image > img {
+  width: 100px;
+  margin: 10px;
 }
-#createProductBtn {
+#create-product-btn {
   border: none;
-  background-color: tomato;
+  background-color: #000000;
   color: white;
-  font: 300 0.9vmax "Roboto";
-  width: 100%;
-  padding: 0.8vmax;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   cursor: pointer;
-  transition: all 0.5s;
-  border-radius: 4px;
-  outline: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
 }
-
-#createProductBtn:hover {
-  background-color: rgb(179, 66, 46);
-}
-
-@media screen and (max-width: 600px) {
-  .newProductContainer {
-    background-color: rgb(255, 255, 255);
+@media (max-width: 1200px) {
+  .dashboard {
+    flex-direction: column;
   }
-  .createProductForm {
-    padding: 5vmax;
+  .create-product-dashboard-container {
+    width: 100%;
   }
-
-  .createProductForm > div > input,
-  .createProductForm > div > select,
-  .createProductForm > div > textarea {
-    padding: 2.5vmax 5vmax;
-    font: 300 1.7vmax cursive;
-  }
-
-  .createProductForm > div > svg {
-    font-size: 2.8vmax;
-  }
-
-  #createProductFormFile > img {
-    width: 8vmax;
-    border-radius: 100%;
-  }
-
-  #createProductFormFile > input::file-selector-button {
-    height: 7vh;
-    font: 400 1.8vmax cursive;
-  }
-
-  #createProductBtn {
-    font: 300 1.9vmax "Roboto";
-    padding: 1.8vmax;
+  .create-product-form {
+    width: 95%;
   }
 }

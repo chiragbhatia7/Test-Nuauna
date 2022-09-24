@@ -118,7 +118,7 @@ const ProductList = ({ history }) => {
   return (
     <Fragment>
       <div className="dashboard">
-        <MetaData title="NUAUNA - Admin Panel" />
+        <MetaData title="NUAUNA - Products" />
         <SideBar />
         <div className="product-list-container">
           <h1>Products</h1>
@@ -126,7 +126,7 @@ const ProductList = ({ history }) => {
             <DataGrid
               rows={rows}
               columns={columns}
-              pageSize={10} 
+              pageSize={10}
               disableSelectionOnClick
               className="product-list-table"
               autoHeight

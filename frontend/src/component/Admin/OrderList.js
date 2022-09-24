@@ -50,7 +50,7 @@ const OrderList = ({ history }) => {
   }, [dispatch, alert, error, deleteError, history, isDeleted]);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
+    { field: "id", headerName: "Order ID", minWidth: 150, flex: 0.5 },
 
     {
       field: "status",
@@ -68,20 +68,20 @@ const OrderList = ({ history }) => {
       headerName: "Items Qty",
       type: "number",
       minWidth: 150,
-      flex: 0.4,
+      flex: 0.5,
     },
 
     {
       field: "amount",
       headerName: "Amount",
       type: "number",
-      minWidth: 270,
+      minWidth: 150,
       flex: 0.5,
     },
 
     {
       field: "actions",
-      flex: 0.3,
+      flex: 0.5,
       headerName: "Actions",
       minWidth: 150,
       type: "number",
@@ -120,21 +120,21 @@ const OrderList = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title={`ALL ORDERS - Admin`} />
-
       <div className="dashboard">
+        <MetaData title={`NUAUNA - Orders`} />
         <SideBar />
-        <div className="productListContainer">
-          <h1 id="productListHeading">ALL ORDERS</h1>
-
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            pageSize={10}
-            disableSelectionOnClick
-            className="productListTable"
-            autoHeight
-          />
+        <div className="product-list-container">
+          <h1>Orders</h1>
+          <div className="product-list">
+            <DataGrid
+              rows={rows}
+              columns={columns}
+              pageSize={10}
+              disableSelectionOnClick
+              className="product-list-table"
+              autoHeight
+            />
+          </div>
         </div>
       </div>
     </Fragment>

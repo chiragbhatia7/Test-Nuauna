@@ -55,8 +55,8 @@ const UsersList = ({ history }) => {
     {
       field: "email",
       headerName: "Email",
-      minWidth: 200,
-      flex: 1,
+      minWidth: 150,
+      flex: 0.5,
     },
     {
       field: "name",
@@ -70,7 +70,7 @@ const UsersList = ({ history }) => {
       headerName: "Role",
       type: "number",
       minWidth: 150,
-      flex: 0.3,
+      flex: 0.5,
       cellClassName: (params) => {
         return params.getValue(params.id, "role") === "admin"
           ? "greenColor"
@@ -80,7 +80,7 @@ const UsersList = ({ history }) => {
 
     {
       field: "actions",
-      flex: 0.3,
+      flex: 0.5,
       headerName: "Actions",
       minWidth: 150,
       type: "number",
@@ -119,21 +119,21 @@ const UsersList = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title={`ALL USERS - Admin`} />
-
       <div className="dashboard">
+        <MetaData title={`NUAUNA - Users`} />
         <SideBar />
-        <div className="productListContainer">
-          <h1 id="productListHeading">ALL USERS</h1>
-
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            pageSize={10}
-            disableSelectionOnClick
-            className="productListTable"
-            autoHeight
-          />
+        <div className="product-list-container">
+          <h1>Users</h1>
+          <div className="product-list">
+            <DataGrid
+              rows={rows}
+              columns={columns}
+              pageSize={10}
+              disableSelectionOnClick
+              className="product-list-table"
+              autoHeight
+            />
+          </div>
         </div>
       </div>
     </Fragment>

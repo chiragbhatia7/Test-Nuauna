@@ -8,11 +8,6 @@ import {
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import DescriptionIcon from "@material-ui/icons/Description";
-import StorageIcon from "@material-ui/icons/Storage";
-import SpellcheckIcon from "@material-ui/icons/Spellcheck";
-import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants";
 
@@ -32,20 +27,12 @@ const UpdateProduct = ({ history, match }) => {
   const [price, setPrice] = useState(0);
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [Stock, setStock] = useState(0);
+  const [stock, setStock] = useState(0);
   const [images, setImages] = useState([]);
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
-  const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
-  ];
+  const categories = ["Shirts", "T-Shirts", "Pants"];
 
   const productId = match.params.id;
 
@@ -57,7 +44,7 @@ const UpdateProduct = ({ history, match }) => {
       setDescription(product.description);
       setPrice(product.price);
       setCategory(product.category);
-      setStock(product.Stock);
+      setStock(product.stock);
       setOldImages(product.images);
     }
     if (error) {
@@ -95,7 +82,7 @@ const UpdateProduct = ({ history, match }) => {
     myForm.set("price", price);
     myForm.set("description", description);
     myForm.set("category", category);
-    myForm.set("Stock", Stock);
+    myForm.set("stock", stock);
 
     images.forEach((image) => {
       myForm.append("images", image);
@@ -126,57 +113,46 @@ const UpdateProduct = ({ history, match }) => {
 
   return (
     <Fragment>
-      <MetaData title="Create Product" />
+      <MetaData title="NUAUNA - Update Product" />
       <div className="dashboard">
         <SideBar />
-        <div className="newProductContainer">
+        <div className="create-product-dashboard-container">
+          <h1>Update Product</h1>
           <form
-            className="createProductForm"
+            className="create-product-form"
             encType="multipart/form-data"
             onSubmit={updateProductSubmitHandler}
           >
-            <h1>Create Product</h1>
-
             <div>
-              <SpellcheckIcon />
               <input
                 type="text"
-                placeholder="Product Name"
+                placeholder="Name"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div>
-              <AttachMoneyIcon />
               <input
                 type="number"
                 placeholder="Price"
                 required
-                onChange={(e) => setPrice(e.target.value)}
                 value={price}
+                onChange={(e) => setPrice(e.target.value)}
               />
             </div>
-
             <div>
-              <DescriptionIcon />
-
               <textarea
-                placeholder="Product Description"
+                placeholder="Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 cols="30"
                 rows="1"
               ></textarea>
             </div>
-
             <div>
-              <AccountTreeIcon />
-              <select
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              >
-                <option value="">Choose Category</option>
+              <select onChange={(e) => setCategory(e.target.value)}>
+                <option value={category}>Category</option>
                 {categories.map((cate) => (
                   <option key={cate} value={cate}>
                     {cate}
@@ -184,19 +160,16 @@ const UpdateProduct = ({ history, match }) => {
                 ))}
               </select>
             </div>
-
             <div>
-              <StorageIcon />
               <input
                 type="number"
                 placeholder="Stock"
                 required
+                value={stock}
                 onChange={(e) => setStock(e.target.value)}
-                value={Stock}
               />
             </div>
-
-            <div id="createProductFormFile">
+            <div id="create-product-form-file">
               <input
                 type="file"
                 name="avatar"
@@ -205,26 +178,17 @@ const UpdateProduct = ({ history, match }) => {
                 multiple
               />
             </div>
-
-            <div id="createProductFormImage">
-              {oldImages &&
-                oldImages.map((image, index) => (
-                  <img key={index} src={image.url} alt="Old Product Preview" />
-                ))}
-            </div>
-
-            <div id="createProductFormImage">
+            <div id="create-product-form-image">
               {imagesPreview.map((image, index) => (
-                <img key={index} src={image} alt="Product Preview" />
+                <img key={index} src={image} alt="Preview" />
               ))}
             </div>
-
             <Button
-              id="createProductBtn"
+              id="create-product-btn"
               type="submit"
               disabled={loading ? true : false}
             >
-              Create
+              Update
             </Button>
           </form>
         </div>

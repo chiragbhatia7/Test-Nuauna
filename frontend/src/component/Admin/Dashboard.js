@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Sidebar from "./Sidebar.js";
 import "./dashboard.css";
-import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { Doughnut, Line } from "react-chartjs-2";
 import { useSelector, useDispatch } from "react-redux";
@@ -64,7 +63,7 @@ const Dashboard = () => {
   };
   return (
     <div className="dashboard">
-      <MetaData title="NUAUNA - Admin Panel" />
+      <MetaData title="NUAUNA - Admin Dashboard" />
       <Sidebar />
       <div className="dashboard-container">
         <h1>Dashboard</h1>

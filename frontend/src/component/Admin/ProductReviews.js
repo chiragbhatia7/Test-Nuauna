@@ -11,7 +11,6 @@ import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
 import DeleteIcon from "@material-ui/icons/Delete";
-import Star from "@material-ui/icons/Star";
 
 import SideBar from "./Sidebar";
 import { DELETE_REVIEW_RESET } from "../../constants/productConstants";
@@ -67,8 +66,8 @@ const ProductReviews = ({ history }) => {
     {
       field: "user",
       headerName: "User",
-      minWidth: 200,
-      flex: 0.6,
+      minWidth: 150,
+      flex: 0.5,
     },
 
     {
@@ -82,8 +81,8 @@ const ProductReviews = ({ history }) => {
       field: "rating",
       headerName: "Rating",
       type: "number",
-      minWidth: 180,
-      flex: 0.4,
+      minWidth: 150,
+      flex: 0.5,
 
       cellClassName: (params) => {
         return params.getValue(params.id, "rating") >= 3
@@ -129,50 +128,50 @@ const ProductReviews = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title={`ALL REVIEWS - Admin`} />
-
       <div className="dashboard">
+        <MetaData title={`NUAUNA - Reviews`} />
         <SideBar />
-        <div className="productReviewsContainer">
-          <form
-            className="productReviewsForm"
-            onSubmit={productReviewsSubmitHandler}
-          >
-            <h1 className="productReviewsFormHeading">ALL REVIEWS</h1>
+        <div className="product-list-container">
+          <h1>Reviews</h1>
+          <div className="product-list">
+            <form
+              className="create-product-form"
+              onSubmit={productReviewsSubmitHandler}
+            >
+              <div>
+                <input
+                  type="text"
+                  placeholder="Product Id"
+                  required
+                  value={productId}
+                  onChange={(e) => setProductId(e.target.value)}
+                />
+              </div>
 
-            <div>
-              <Star />
-              <input
-                type="text"
-                placeholder="Product Id"
-                required
-                value={productId}
-                onChange={(e) => setProductId(e.target.value)}
+              <Button
+                id="createProductBtn"
+                type="submit"
+                disabled={
+                  loading ? true : false || productId === "" ? true : false
+                }
+              >
+                Search
+              </Button>
+            </form>
+          </div>
+          {reviews && reviews.length > 0 ? (
+            <div className="product-list">
+              <DataGrid
+                rows={rows}
+                columns={columns}
+                pageSize={10}
+                disableSelectionOnClick
+                className="product-list-table"
+                autoHeight
               />
             </div>
-
-            <Button
-              id="createProductBtn"
-              type="submit"
-              disabled={
-                loading ? true : false || productId === "" ? true : false
-              }
-            >
-              Search
-            </Button>
-          </form>
-
-          {reviews && reviews.length > 0 ? (
-            <DataGrid
-              rows={rows}
-              columns={columns}
-              pageSize={10}
-              disableSelectionOnClick
-              className="productListTable"
-              autoHeight
-            />
           ) : (
-            <h1 className="productReviewsFormHeading">No Reviews Found</h1>
+            <h1>No Reviews Found</h1>
           )}
         </div>
       </div>
