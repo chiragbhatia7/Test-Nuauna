@@ -1,7 +1,7 @@
+ /* eslint-disable */
 import React, { Fragment, useState, useEffect } from "react";
 import "./ForgotPassword.css";
 import Loader from "../layout/Loader/Loader";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, forgotPassword } from "../../actions/userAction";
 import { useAlert } from "react-alert";
@@ -43,17 +43,15 @@ const ForgotPassword = () => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="Forgot Password" />
-          <div className="forgotPasswordContainer">
-            <div className="forgotPasswordBox">
-              <h2 className="forgotPasswordHeading">Forgot Password</h2>
-
+          <div className="dashboard">
+            <MetaData title="NUAUNA - Forgot Password" />
+            <div className="create-product-dashboard-container">
+              <h1>Forgot Password</h1>
               <form
-                className="forgotPasswordForm"
+                className="create-product-form"
                 onSubmit={forgotPasswordSubmit}
               >
-                <div className="forgotPasswordEmail">
-                  <MailOutlineIcon />
+                <div>
                   <input
                     type="email"
                     placeholder="Email"
@@ -63,12 +61,7 @@ const ForgotPassword = () => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-
-                <input
-                  type="submit"
-                  value="Send"
-                  className="forgotPasswordBtn"
-                />
+                <input type="submit" value="Send" id="create-product-btn" />
               </form>
             </div>
           </div>

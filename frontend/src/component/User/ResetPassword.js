@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Fragment, useState, useEffect } from "react";
 import "./ResetPassword.css";
 import Loader from "../layout/Loader/Loader";
@@ -5,8 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, resetPassword } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import LockIcon from "@material-ui/icons/Lock";
 
 const ResetPassword = ({ history, match }) => {
   const dispatch = useDispatch();
@@ -49,17 +48,15 @@ const ResetPassword = ({ history, match }) => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="Change Password" />
-          <div className="resetPasswordContainer">
-            <div className="resetPasswordBox">
-              <h2 className="resetPasswordHeading">Update Profile</h2>
-
+          <div className="dashboard">
+            <MetaData title="NUAUNA - Change Password" />
+            <div className="create-product-dashboard-container">
+              <h1>Update Password</h1>
               <form
-                className="resetPasswordForm"
+                className="create-product-form"
                 onSubmit={resetPasswordSubmit}
               >
                 <div>
-                  <LockOpenIcon />
                   <input
                     type="password"
                     placeholder="New Password"
@@ -68,8 +65,7 @@ const ResetPassword = ({ history, match }) => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
-                <div className="loginPassword">
-                  <LockIcon />
+                <div>
                   <input
                     type="password"
                     placeholder="Confirm Password"
@@ -81,7 +77,7 @@ const ResetPassword = ({ history, match }) => {
                 <input
                   type="submit"
                   value="Update"
-                  className="resetPasswordBtn"
+                  id="create-product-btn"
                 />
               </form>
             </div>

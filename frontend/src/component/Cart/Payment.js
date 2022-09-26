@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Fragment, useEffect, useRef } from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import { useSelector, useDispatch } from "react-redux";
@@ -116,11 +117,36 @@ const Payment = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title="Payment" />
+      <MetaData title="NUAUNA - Payment" />
       <CheckoutSteps activeStep={2} />
-      <div className="paymentContainer">
-        <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
-          <Typography>Card Info</Typography>
+      <div className="dashboard">
+        <div className="create-product-dashboard-container">
+        <h1>Card Info</h1>
+          <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
+          <div>
+            <CreditCardIcon />
+            <CardNumberElement className="paymentInput" />
+          </div>
+          <div>
+            <EventIcon />
+            <CardExpiryElement className="paymentInput" />
+          </div>
+          <div>
+            <VpnKeyIcon />
+            <CardCvcElement className="paymentInput" />
+          </div>
+
+          <input
+            type="submit"
+            value={`Pay - ₹${orderInfo && orderInfo.totalPrice}`}
+            ref={payBtn}
+            className="paymentFormBtn"
+            id="create-product-btn"
+          />
+          </form>
+        </div>
+        {/* <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
+          <h1>Card Info</h1>
           <div>
             <CreditCardIcon />
             <CardNumberElement className="paymentInput" />
@@ -140,7 +166,7 @@ const Payment = ({ history }) => {
             ref={payBtn}
             className="paymentFormBtn"
           />
-        </form>
+        </form> */}
       </div>
     </Fragment>
   );

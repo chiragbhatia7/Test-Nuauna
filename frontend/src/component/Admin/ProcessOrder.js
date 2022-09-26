@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import React, { Fragment, useEffect, useState } from "react";
 import MetaData from "../layout/MetaData";
 import { Link } from "react-router-dom";

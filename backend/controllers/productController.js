@@ -150,7 +150,7 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
     });
   } else {
     product.reviews.push(review);
-    product.numOfReviews = product.reviews.length;
+    product.numberOfReviews = product.reviews.length;
   }
   let avg = 0;
   product.reviews.forEach((rev) => {
@@ -194,13 +194,13 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
   } else {
     ratings = avg / reviews.length;
   }
-  const numOfReviews = reviews.length;
+  const numberOfReviews = reviews.length;
   await Product.findByIdAndUpdate(
     req.query.productId,
     {
       reviews,
       ratings,
-      numOfReviews,
+      numberOfReviews,
     },
     {
       new: true,

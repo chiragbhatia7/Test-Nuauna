@@ -1,56 +1,14 @@
-/* .PageNotFound {
-  margin: auto;
-  text-align: center;
-  padding: 10vmax;
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.PageNotFound > svg {
-  font-size: 7vmax;
-  color: tomato;
-}
-.PageNotFound > p {
-  font-size: 2vmax;
-}
-.PageNotFound > a {
-  background-color: rgb(51, 51, 51);
-  color: white;
-  border: none;
-  padding: 1vmax 3vmax;
-  cursor: pointer;
-  font: 400 1vmax "Roboto";
-  text-decoration: none;
-  margin: 2vmax;
-}
-
-@media screen and (max-width: 600px) {
-  .PageNotFound > a {
-    padding: 3vw 6vw;
-    font: 400 4vw "Roboto";
-    margin: 2vmax;
-  }
-
-  .PageNotFound > svg {
-    font-size: 20vw;
-  }
-  .PageNotFound > p {
-    margin: 2vmax;
-    font-size: 5vw;
-  }
-} */
-
 .page-not-found {
   min-height: 75vh;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .page-not-found h1 {
   font-size: 48px;
+  text-align: center;
 }
 .page-not-found p {
   border: none;
@@ -64,4 +22,13 @@
   margin: 25px 4px 2px;
   cursor: pointer;
   font-size: 24px;
+}
+
+@media (max-width: 405px) {
+  .page-not-found h1 {
+    font-size: 36px;
+  }
+  .page-not-found p {
+    font-size: 12px;
+  }
 }

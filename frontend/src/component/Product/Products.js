@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import React, { Fragment, useEffect, useState } from "react";
 import "./Products.css";
 import { useSelector, useDispatch } from "react-redux";

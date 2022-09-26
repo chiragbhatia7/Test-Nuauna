@@ -9,6 +9,7 @@
   align-items: center;
 }
 .create-product-dashboard-container {
+  min-height: 75vh;
   background-color: white;
   padding: 100px;
   width: 80%;

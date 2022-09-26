@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import React from "react";
 import "./aboutSection.css";
 import { Button, Typography, Avatar } from "@material-ui/core";

@@ -1,10 +1,10 @@
+/* eslint-disable */
 import React, { Fragment } from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import { useSelector } from "react-redux";
 import MetaData from "../layout/MetaData";
 import "./ConfirmOrder.css";
 import { Link } from "react-router-dom";
-import { Typography } from "@material-ui/core";
 
 const ConfirmOrder = ({ history }) => {
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
@@ -40,10 +40,10 @@ const ConfirmOrder = ({ history }) => {
     <Fragment>
       <MetaData title="Confirm Order" />
       <CheckoutSteps activeStep={1} />
-      <div className="confirmOrderPage">
+      <div className="dashboard">
         <div>
           <div className="confirmshippingArea">
-            <Typography>Shipping Info</Typography>
+            <h1>Shipping Info</h1>
             <div className="confirmshippingAreaBox">
               <div>
                 <p>Name:</p>
@@ -60,7 +60,7 @@ const ConfirmOrder = ({ history }) => {
             </div>
           </div>
           <div className="confirmCartItems">
-            <Typography>Your Cart Items:</Typography>
+            <h1>Cart Items</h1>
             <div className="confirmCartItemsContainer">
               {cartItems &&
                 cartItems.map((item) => (
@@ -81,7 +81,7 @@ const ConfirmOrder = ({ history }) => {
         {/*  */}
         <div>
           <div className="orderSummary">
-            <Typography>Order Summery</Typography>
+            <h1>Order Summary</h1>
             <div>
               <div>
                 <p>Subtotal:</p>
@@ -104,7 +104,9 @@ const ConfirmOrder = ({ history }) => {
               <span>₹{totalPrice}</span>
             </div>
 
-            <button onClick={proceedToPayment}>Proceed To Payment</button>
+            <button id="create-product-btn" onClick={proceedToPayment}>
+              Pay
+            </button>
           </div>
         </div>
       </div>

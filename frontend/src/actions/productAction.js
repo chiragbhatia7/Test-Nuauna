@@ -1,3 +1,4 @@
+// eslint-disable
 import axios from "axios";
 import {
   ALL_PRODUCT_FAIL,

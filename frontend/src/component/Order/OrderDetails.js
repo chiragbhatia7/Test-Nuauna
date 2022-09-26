@@ -1,9 +1,9 @@
+/* eslint-disable */
 import React, { Fragment, useEffect } from "react";
 import "./orderDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../layout/MetaData";
 import { Link } from "react-router-dom";
-import { Typography } from "@material-ui/core";
 import { getOrderDetails, clearErrors } from "../../actions/orderAction";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
@@ -29,88 +29,122 @@ const OrderDetails = ({ match }) => {
       ) : (
         <Fragment>
           <MetaData title="Order Details" />
-          <div className="orderDetailsPage">
-            <div className="orderDetailsContainer">
-              <Typography component="h1">
-                Order #{order && order._id}
-              </Typography>
-              <Typography>Shipping Info</Typography>
-              <div className="orderDetailsContainerBox">
-                <div>
-                  <p>Name:</p>
-                  <span>{order.user && order.user.name}</span>
-                </div>
-                <div>
-                  <p>Phone:</p>
-                  <span>
-                    {order.shippingInfo && order.shippingInfo.phoneNo}
-                  </span>
-                </div>
-                <div>
-                  <p>Address:</p>
-                  <span>
-                    {order.shippingInfo &&
-                      `${order.shippingInfo.address}, ${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.pinCode}, ${order.shippingInfo.country}`}
-                  </span>
-                </div>
-              </div>
-              <Typography>Payment</Typography>
-              <div className="orderDetailsContainerBox">
-                <div>
-                  <p
-                    className={
-                      order.paymentInfo &&
-                      order.paymentInfo.status === "succeeded"
-                        ? "greenColor"
-                        : "redColor"
-                    }
-                  >
-                    {order.paymentInfo &&
-                    order.paymentInfo.status === "succeeded"
-                      ? "PAID"
-                      : "NOT PAID"}
-                  </p>
-                </div>
+          <div className="process-order-dashboard">
+            <MetaData title="NUAUNA - Process Order" />
+            <div className="process-order-dashboard-container">
+              {loading ? (
+                <Loader />
+              ) : (
+                <div
+                  style={{
+                    display:
+                      order.orderStatus === "Delivered" ? "block" : "grid",
+                  }}
+                >
+                  <div className="process-order-details">
+                    <div>
+                      <h1>Shipping Info</h1>
+                      <div>
+                        <div>
+                          <div>
+                            <p>
+                              <b>Name:</b>
+                            </p>
+                            <span>{order.user && order.user.name}</span>
+                          </div>
+                          <div>
+                            <p>
+                              <b>Phone:</b>
+                            </p>
+                            <span>
+                              {order.shippingInfo && order.shippingInfo.phoneNo}
+                            </span>
+                          </div>
+                          <div>
+                            <p>
+                              <b>Address:</b>
+                            </p>
+                            <span>
+                              {order.shippingInfo &&
+                                `${order.shippingInfo.address}, ${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.pinCode}, ${order.shippingInfo.country}`}
+                            </span>
+                          </div>
+                        </div>
 
-                <div>
-                  <p>Amount:</p>
-                  <span>{order.totalPrice && order.totalPrice}</span>
-                </div>
-              </div>
+                        <h1>Payment</h1>
+                        <div>
+                          <div>
+                            <p
+                              className={
+                                order.paymentInfo &&
+                                order.paymentInfo.status === "succeeded"
+                                  ? "green-color"
+                                  : "red-color"
+                              }
+                            >
+                              {order.paymentInfo &&
+                              order.paymentInfo.status === "succeeded"
+                                ? "PAID"
+                                : "NOT PAID"}
+                            </p>
+                          </div>
 
-              <Typography>Order Status</Typography>
-              <div className="orderDetailsContainerBox">
-                <div>
-                  <p
-                    className={
-                      order.orderStatus && order.orderStatus === "Delivered"
-                        ? "greenColor"
-                        : "redColor"
-                    }
-                  >
-                    {order.orderStatus && order.orderStatus}
-                  </p>
-                </div>
-              </div>
-            </div>
+                          <div>
+                            <p>
+                              <b>Amount:</b>
+                            </p>
+                            <span>{order.totalPrice && order.totalPrice}</span>
+                          </div>
+                        </div>
 
-            <div className="orderDetailsCartItems">
-              <Typography>Order Items:</Typography>
-              <div className="orderDetailsCartItemsContainer">
-                {order.orderItems &&
-                  order.orderItems.map((item) => (
-                    <div key={item.product}>
-                      <img src={item.image} alt="Product" />
-                      <Link to={`/product/${item.product}`}>
-                        {item.name}
-                      </Link>{" "}
-                      <span>
-                        {item.quantity} X ₹{item.price} ={" "}
-                        <b>₹{item.price * item.quantity}</b>
-                      </span>
+                        <h1>Order Status</h1>
+                        <div>
+                          <div>
+                            <p
+                              className={
+                                order.orderStatus &&
+                                order.orderStatus === "Delivered"
+                                  ? "greenColor"
+                                  : "redColor"
+                              }
+                            >
+                              {order.orderStatus && order.orderStatus}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <h1>Cart Items</h1>
+                        <div>
+                          {order.orderItems &&
+                            order.orderItems.map((item) => (
+                              <div className="cart-items" key={item.product}>
+                                <div>
+                                  <img src={item.image} alt="Product" />
+                                </div>
+                                <div>
+                                  <Link to={`/product/${item.product}`}>
+                                    {item.name}
+                                  </Link>{" "}
+                                </div>
+                                <div>
+                                  {item.quantity} X ₹{item.price} ={" "}
+                                  <b>₹{item.price * item.quantity}</b>
+                                </div>
+                              </div>
+                            ))}
+                        </div>
+                      </div>
                     </div>
-                  ))}
-              </div>
+                    <div
+                      style={{
+                        display:
+                          order.orderStatus === "Delivered" ? "none" : "block",
+                      }}
+                    ></div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </Fragment>

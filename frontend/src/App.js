@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import "./App.css";
 import { useEffect, useState } from "react";
 import Header from "./component/layout/Header/Header.js";
@@ -8,7 +9,9 @@ import Home from "./component/Home/Home";
 import ProductDetails from "./component/Product/ProductDetails";
 import Products from "./component/Product/Products";
 import Search from "./component/Product/Search";
-import LoginSignUp from "./component/User/LoginSignUp";
+import Login from "./component/User/Login";
+import Register from "./component/User/Register.js";
+import Logout from "./component/User/Logout.js"
 import store from "./store";
 import { loadUser } from "./actions/userAction";
 import { useSelector } from "react-redux";
@@ -42,7 +45,7 @@ import About from "./component/layout/About/About";
 import NotFound from "./component/layout/Not Found/NotFound";
 
 function App() {
-  // const { isAuthenticated, user } = useSelector((state) => state.user);
+  const { isAuthenticated, user } = useSelector((state) => state.user);
 
   const [stripeApiKey, setStripeApiKey] = useState("");
 
@@ -72,7 +75,6 @@ function App() {
           <ProtectedRoute exact path="/process/payment" component={Payment} />
         </Elements>
       )}
-
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/product/:id" component={ProductDetails} />
@@ -99,7 +101,11 @@ function App() {
 
         <Route exact path="/password/reset/:token" component={ResetPassword} />
 
-        <Route exact path="/login" component={LoginSignUp} />
+        <Route exact path="/login" component={Login} />
+
+        <Route exact path="/register" component={Register} />
+
+        <Route exact path="/logout" component={Logout} />
 
         <Route exact path="/cart" component={Cart} />
 

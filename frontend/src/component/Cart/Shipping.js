@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Fragment, useState } from "react";
 import "./Shipping.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -40,21 +41,20 @@ const Shipping = ({ history }) => {
 
   return (
     <Fragment>
-      <MetaData title="Shipping Details" />
+      <MetaData title="NUAUNA - Shipping Details" />
 
       <CheckoutSteps activeStep={0} />
 
-      <div className="shippingContainer">
-        <div className="shippingBox">
-          <h2 className="shippingHeading">Shipping Details</h2>
+      <div className="dashboard">
+        <div className="create-product-dashboard-container">
+          <h1>Shipping Details</h1>
 
           <form
-            className="shippingForm"
+            className="create-product-form"
             encType="multipart/form-data"
             onSubmit={shippingSubmit}
           >
             <div>
-              <HomeIcon />
               <input
                 type="text"
                 placeholder="Address"
@@ -65,7 +65,6 @@ const Shipping = ({ history }) => {
             </div>
 
             <div>
-              <LocationCityIcon />
               <input
                 type="text"
                 placeholder="City"
@@ -76,7 +75,6 @@ const Shipping = ({ history }) => {
             </div>
 
             <div>
-              <PinDropIcon />
               <input
                 type="number"
                 placeholder="Pin Code"
@@ -87,7 +85,6 @@ const Shipping = ({ history }) => {
             </div>
 
             <div>
-              <PhoneIcon />
               <input
                 type="number"
                 placeholder="Phone Number"
@@ -99,8 +96,6 @@ const Shipping = ({ history }) => {
             </div>
 
             <div>
-              <PublicIcon />
-
               <select
                 required
                 value={country}
@@ -118,8 +113,6 @@ const Shipping = ({ history }) => {
 
             {country && (
               <div>
-                <TransferWithinAStationIcon />
-
                 <select
                   required
                   value={state}
@@ -139,7 +132,7 @@ const Shipping = ({ history }) => {
             <input
               type="submit"
               value="Continue"
-              className="shippingBtn"
+              id="create-product-btn"
               disabled={state ? false : true}
             />
           </form>

@@ -1,8 +1,8 @@
+ /* eslint-disable */
 import React, { Fragment, useState, useEffect } from "react";
 import "./UpdateProfile.css";
+import "../Admin/newProduct.css";
 import Loader from "../layout/Loader/Loader";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import FaceIcon from "@material-ui/icons/Face";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, updateProfile, loadUser } from "../../actions/userAction";
 import { useAlert } from "react-alert";
@@ -74,18 +74,17 @@ const UpdateProfile = ({ history }) => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="Update Profile" />
-          <div className="updateProfileContainer">
-            <div className="updateProfileBox">
-              <h2 className="updateProfileHeading">Update Profile</h2>
-
+          <div className="dashboard">
+            <MetaData title="NUAUNA - Update Profile" />
+            <div className="create-product-dashboard-container">
+              <h1>Update Profile</h1>
               <form
-                className="updateProfileForm"
+                className="create-product-form"
+                id="create-product-form"
                 encType="multipart/form-data"
                 onSubmit={updateProfileSubmit}
               >
-                <div className="updateProfileName">
-                  <FaceIcon />
+                <div>
                   <input
                     type="text"
                     placeholder="Name"
@@ -95,8 +94,7 @@ const UpdateProfile = ({ history }) => {
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
-                <div className="updateProfileEmail">
-                  <MailOutlineIcon />
+                <div>
                   <input
                     type="email"
                     placeholder="Email"
@@ -106,21 +104,17 @@ const UpdateProfile = ({ history }) => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-
-                <div id="updateProfileImage">
+                <div id="create-product-form-file">
                   <img src={avatarPreview} alt="Avatar Preview" />
                   <input
+                    id="create-product-form-image"
                     type="file"
                     name="avatar"
                     accept="image/*"
                     onChange={updateProfileDataChange}
                   />
                 </div>
-                <input
-                  type="submit"
-                  value="Update"
-                  className="updateProfileBtn"
-                />
+                <input type="submit" value="Update" id="create-product-btn" />
               </form>
             </div>
           </div>

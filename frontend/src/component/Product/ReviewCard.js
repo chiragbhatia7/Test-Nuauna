@@ -1,4 +1,4 @@
-import { Avatar } from "@material-ui/core";
+ /* eslint-disable */
 import { Rating } from "@material-ui/lab";
 import React from "react";
 import profilePng from "./Profile.png";

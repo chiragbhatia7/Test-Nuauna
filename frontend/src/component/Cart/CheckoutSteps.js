@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import React, { Fragment } from "react";
 import { Typography, Stepper, StepLabel, Step } from "@material-ui/core";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
@@ -8,15 +9,15 @@ import "./CheckoutSteps.css";
 const CheckoutSteps = ({ activeStep }) => {
   const steps = [
     {
-      label: <Typography>Shipping Details</Typography>,
+      label: <p>Shipping Details</p>,
       icon: <LocalShippingIcon />,
     },
     {
-      label: <Typography>Confirm Order</Typography>,
+      label: <p>Confirm Order</p>,
       icon: <LibraryAddCheckIcon />,
     },
     {
-      label: <Typography>Payment</Typography>,
+      label: <p>Payment</p>,
       icon: <AccountBalanceIcon />,
     },
   ];
@@ -36,7 +37,7 @@ const CheckoutSteps = ({ activeStep }) => {
           >
             <StepLabel
               style={{
-                color: activeStep >= index ? "tomato" : "rgba(0, 0, 0, 0.649)",
+                color: activeStep >= index ? "black" : "gray",
               }}
               icon={item.icon}
             >

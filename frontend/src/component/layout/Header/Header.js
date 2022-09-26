@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import React from "react";
 import "../Header/Header.css";
 
@@ -18,21 +19,19 @@ const Header = () => {
           <li>
             <a href="#footer-section">Contact Us</a>
           </li>
-        </ul>
-        <ul className="header-menu-icons">
           <li>
             <a href="/search">
-              <i className="fa-solid fa-magnifying-glass"></i>
+              Search
             </a>
           </li>
           <li>
             <a href="/cart">
-              <i className="fa-solid fa-cart-shopping"></i>
+              Cart
             </a>
           </li>
           <li>
             <a href="/login">
-              <i className="fa-solid fa-user"></i>
+              Account
             </a>
           </li>
         </ul>

@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import React, { Fragment, useState, useEffect } from "react";
 import "./UpdatePassword.css";
 import Loader from "../layout/Loader/Loader";

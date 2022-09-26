@@ -1,3 +1,4 @@
+ /* eslint-disable */
 import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/all";
 import "./Home.css";
