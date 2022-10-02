@@ -1,8 +1,7 @@
 .sidebar {
   width: 20%;
   padding: 100px 0;
-  background-color: black;
-  color: white;
+  background-color: white;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -17,7 +16,7 @@
 }
 .sidebar a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 @media (max-width: 1200px) {
   .sidebar {

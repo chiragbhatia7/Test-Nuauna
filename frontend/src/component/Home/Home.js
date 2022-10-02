@@ -1,4 +1,4 @@
- /* eslint-disable */
+/* eslint-disable */
 import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/all";
 import "./Home.css";
@@ -93,7 +93,11 @@ const Home = () => {
                 type="email"
                 placeholder="Enter A Valid Email Id"
               />
-              <button className="newsletter-submit-button" type="submit">
+              <button
+                // onClick={newsletterSignup}
+                className="newsletter-submit-button"
+                type="submit"
+              >
                 SUBMIT
               </button>
             </form>
