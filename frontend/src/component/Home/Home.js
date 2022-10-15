@@ -1,10 +1,11 @@
 /* eslint-disable */
-import React, { Fragment, useEffect } from "react";
-import { CgMouse } from "react-icons/all";
+import React, { Fragment, useEffect, useState } from "react";
+
 import "./Home.css";
 import ProductCard from "./ProductCard.js";
 import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
+import { registerEmailForNewsletter } from "../../actions/userAction";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
@@ -13,6 +14,21 @@ const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
   const { loading, error, products } = useSelector((state) => state.products);
+
+  const [email, setEmail] = useState("");
+
+  const onEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const registerEmail = (e) => {
+    e.preventDefault();
+    const myForm = new FormData();
+    myForm.set("email", email);
+    dispatch(registerEmailForNewsletter(myForm));
+    alert.success("Email Subscribed Successfully");
+  };
+
 
   useEffect(() => {
     if (error) {
@@ -32,7 +48,7 @@ const Home = () => {
           <div className="home-section">
             <h1>NUAUNA</h1>
             <p>THE PERFECT SYNTHESIS OF CLASSIC AND EDGY!</p>
-            <a href="#featured-products" className="home-explore-button">
+            <a href="/products" className="home-explore-button">
               EXPLORE <i className="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -87,11 +103,15 @@ const Home = () => {
               Subscribe To Our Newsletter And Get Notified About Latest Updates,
               Offers And Products!
             </p>
-            <form method="POST" action="/">
+            <form onSubmit={(e) => registerEmail(e)} action="/">
               <input
                 className="newsletter-input-field"
                 type="email"
-                placeholder="Enter A Valid Email Id"
+                value={email}
+                onChange={(e) => {
+                  onEmailChange(e);
+                }}
+                placeholder="Enter a Valid Email Id"
               />
               <button
                 // onClick={newsletterSignup}

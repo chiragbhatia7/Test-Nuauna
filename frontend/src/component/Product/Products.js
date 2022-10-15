@@ -8,7 +8,7 @@ import ProductCard from "../Home/ProductCard";
 import Pagination from "react-js-pagination";
 import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
-import Typography from "@material-ui/core/Typography";
+
 import MetaData from "../layout/MetaData";
 
 const categories = ["Shirts", "T-Shirts", "Pants"];
@@ -50,7 +50,7 @@ const Products = ({ match }) => {
       ) : (
         <div className="products-section">
           <MetaData title="NUAUNA - Products" />
-          <h1>Products</h1>
+          <h1>Our Products</h1>
           <div className="products-flex">
             <div className="product-filters">
               <div>
@@ -121,7 +121,7 @@ const Products = ({ match }) => {
           )}
         </div>
       )}
-      ;
+      
     </Fragment>
   );
 };

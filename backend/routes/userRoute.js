@@ -1,5 +1,6 @@
 const express = require("express");
 const {
+  registerEmailForNewsletter,
   registerUser,
   loginUser,
   logout,
@@ -17,6 +18,7 @@ const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
 const router = express.Router();
 
+router.route("/").post(registerEmailForNewsletter);
 router.route("/register").post(registerUser);
 router.route("/login").post(loginUser);
 router.route("/password/forgot").post(forgotPassword);

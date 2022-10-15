@@ -6,6 +6,40 @@ const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
 const cloudinary = require("cloudinary");
 
+
+//Register Email for Newsletter
+exports.registerEmailForNewsletter = catchAsyncErrors(
+  async (req, res, next) => {
+    let email = req.body.email;
+    console.log(email)
+    let data = {
+      members: [
+        {
+          email_address: email,
+          status: "subscribed",
+        },
+      ],
+    };
+    let JSONData = JSON.stringify(data);
+    const url = "https://us17.api.mailchimp.com/3.0/lists/9a4122f072";
+    let options = {
+      method: "POST",
+      auth: "chirag:50fee74c03f6bd054c833392824c5ac1-us17",
+    };
+    let request = https.request(url, options, function (response) {
+      if (response.statusCode === 200) {
+        res.status(200).json({
+          success: true,
+          message: "Email Subscribed Succefully",
+        })
+      }
+    });
+    request.write(JSONData);
+    request.end();
+  }
+);
+
+
 //Register A New User
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {

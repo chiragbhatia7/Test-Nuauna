@@ -6,8 +6,9 @@
   flex-direction: column;
   justify-content: space-evenly;
   background-color: #000000;
-  color: #ffffff;
+  color: #D9CAB3;
   z-index: -1;
+  
 }
 .footer-links {
   list-style: none;
@@ -16,12 +17,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  color: #D9CAB3;
 }
 
 .footer-socials a {
   color: #ffffff;
   font-size: 16px;
   padding: 18px;
+  color: #D9CAB3;
 }
 
 .footer-contact {
@@ -29,11 +32,13 @@
 }
 .footer-links li a {
   text-decoration: none;
-  color: #FFFFFF;
+  
+  color: #D9CAB3;
 }
 .footer-contact li a {
   text-decoration: none;
-  color: #FFFFFF;
+  
+  color: #D9CAB3;
 }
 .footer-bottom {
   display: flex;

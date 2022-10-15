@@ -1,3 +1,7 @@
+
+
+
+
 .cart-page {
   width: 100%;
   min-height: 75vh;
@@ -6,7 +10,9 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background-color: #D9CAB3;
 }
+
 
 .cart-header {
   background-color: black;
@@ -36,6 +42,7 @@
 .cart-input {
   display: flex;
   align-items: center;
+  background-color: #D9CAB3;
 }
 
 .cart-input button {
@@ -59,6 +66,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #D9CAB3;
 }
 
 .cart-subtotal {

@@ -8,9 +8,11 @@
   height: auto;
   width: 100%;
   background-color: black;
+  
 }
 .header-wrapper ul li {
   margin: 15px 0;
+  
 }
 .header-wrapper ul li a {
   color: #fff;
@@ -21,6 +23,7 @@
   position: relative;
   line-height: 50px;
   transition: all 0.3s ease;
+  color: #D9CAB3;
 }
 .header-menu-links {
   display: flex;

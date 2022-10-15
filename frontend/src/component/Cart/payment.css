@@ -51,6 +51,7 @@
   cursor: pointer;
   transition: all 0.5s;
   outline: none;
+  border-radius: 10px;
 }
 
 .paymentFormBtn:hover {

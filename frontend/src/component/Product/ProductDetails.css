@@ -2,6 +2,7 @@
   min-height: 50vh;
   display: flex;
   justify-content: center;
+  background-color: #D9CAB3;
 }
 .product-details-left {
   width: 50%;
@@ -11,6 +12,7 @@
 .product-details-left img {
   width: 450px;
   height: 600px;
+  border-radius: 10px;
 }
 .product-details-right {
   width: 50%;
@@ -41,6 +43,8 @@
   transition: all 0.5s;
   padding: 15px;
   margin: 15px 15px 15px 0;
+  border-radius: 10px;
+  
 }
 .minus-btn,
 .plus-btn {
@@ -48,6 +52,7 @@
   width: 50px;
   height: 50px;
   text-align: center;
+  
 }
 .product-units-and-cart input {
   border: none;
@@ -57,12 +62,19 @@
   text-align: center;
   color: black;
   font-size: 16px;
+  background-color: #D9CAB3;
 }
 .status-out-of-stock {
   color: red;
 }
 .status-in-stock {
   color: green;
+}
+
+.product-reviews{
+  background-color: #D9CAB3;
+  
+  margin: 0px;
 }
 .product-review button {
   border: none;
@@ -72,6 +84,7 @@
   transition: all 0.5s;
   padding: 15px;
   margin-top: 15px;
+  border-radius: 10px;
 }
 .submit-dialogue {
   display: flex;
@@ -103,7 +116,7 @@
 }
 .product-reviews {
   min-height: 50vh;
-  margin: 18px;
+  margin: 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

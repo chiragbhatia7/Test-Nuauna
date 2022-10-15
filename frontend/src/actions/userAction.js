@@ -39,6 +39,20 @@ import {
 } from "../constants/userConstants";
 import axios from "axios";
 
+//Register Email For Newsletter
+export const registerEmailForNewsletter = (userEmail) => async (dispatch) => {
+  try {
+    const config = { headers: { "Content-Type": "multipart/form-data" } };
+    const { data } = await axios.post(`/api/v1/`, userEmail, config);
+    dispatch({ payload: data.userEmail });
+  } catch (error) {
+    dispatch({
+      payload: error.response.data.message,
+    });
+  }
+};
+
+
 //Login
 export const login = (email, password) => async (dispatch) => {
   try {

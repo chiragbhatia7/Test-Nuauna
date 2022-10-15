@@ -3,6 +3,9 @@
   background-color: white;
   display: grid;
   grid-template-columns: 6fr 3fr;
+  
+  color: #D9CAB3;
+
 }
 
 .confirmOrderPage > div:last-child {
@@ -12,6 +15,8 @@
 .confirmshippingArea {
   padding: 5vmax;
   padding-bottom: 0%;
+  color:  #D9CAB3;
+  
 }
 
 .confirmshippingAreaBox,
@@ -34,6 +39,7 @@
 .confirmCartItems {
   padding: 5vmax;
   padding-top: 2vmax;
+  color:  #D9CAB3;
 }
 
 .confirmCartItemsContainer {
@@ -65,7 +71,9 @@
 
 .orderSummary {
   padding: 7vmax;
+  color: #D9CAB3;
 }
+
 
 .orderSummary > p {
   text-align: center;
@@ -74,13 +82,15 @@
   width: 100%;
   margin: auto;
   box-sizing: border-box;
+  color: black;
 }
 
 .orderSummary > div > div {
   display: flex;
-  font: 300 1vmax "Roboto";
+  font: 500 1vmax "Roboto";
   justify-content: space-between;
   margin: 2vmax 0;
+  color: black;
 }
 .orderSummary > div > div > span {
   color: rgba(0, 0, 0, 0.692);
@@ -94,7 +104,7 @@
 }
 
 .orderSummary > button {
-  background-color: black;
+  background-color: #D9CAB3;
   color: white;
   width: 100%;
   padding: 1vmax;
@@ -102,10 +112,13 @@
   margin: auto;
   cursor: pointer;
   transition: 0.5s;
+  border-radius: 10px;
+ 
 }
 
 .orderSummary > button:hover {
   background-color: black;
+  background-color: #D9CAB3;
 }
 
 @media screen and (max-width: 600px) {

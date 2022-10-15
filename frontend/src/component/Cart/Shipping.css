@@ -4,6 +4,7 @@
   height: 90vh;
   box-sizing: border-box;
   overflow: hidden;
+  background-color: #D9CAB3;
 }
 
 .shippingHeading {
@@ -24,6 +25,7 @@
   justify-content: space-evenly;
   height: 80%;
   transition: all 0.5s;
+  
 }
 
 .shippingForm > div {
@@ -41,6 +43,7 @@
   border: 1px solid rgba(0, 0, 0, 0.267);
   border-radius: 4px;
   outline: none;
+  background-color: #D9CAB3;
 }
 
 .shippingForm > div > svg {
@@ -59,6 +62,7 @@
   transition: all 0.5s;
   outline: none;
   margin: 2vmax;
+  border-radius: 10px;
 }
 
 .shippingBtn:hover {

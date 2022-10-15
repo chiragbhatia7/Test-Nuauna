@@ -1,12 +1,14 @@
 .dashboard {
   display: flex;
   justify-content: center;
+  
 }
 .dashboard h1 {
   font-size: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .create-product-dashboard-container {
   min-height: 75vh;
@@ -17,6 +19,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 .create-product-form {
   margin: 20px;
@@ -27,8 +30,9 @@
   justify-content: space-evenly;
   width: 50%;
   min-height: auto;
-  background-color: white;
+  background-color: #D9CAB3;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+  border-radius: 10px;
 }
 .create-product-form > div {
   display: flex;
@@ -36,6 +40,8 @@
   align-items: center;
   width: 100%;
   margin: 20px;
+  background-color: #D9CAB3;
+  
 }
 .create-product-form > div > input,
 .create-product-form > div > select,
@@ -47,6 +53,7 @@
   border: 1px solid black;
   border-radius: 4px;
   outline: none;
+  background-color: #D9CAB3;
 }
 #create-product-form-file > input::file-selector-button {
   cursor: pointer;
@@ -62,20 +69,23 @@
 #create-product-form-file > input::file-selector-button:hover {
   background-color: black;
   color: white;
+  background-color: #D9CAB3;
 }
 
 #create-product-form-image {
   width: 100%;
   overflow: auto;
+  background-color: #D9CAB3;
 }
 
 #create-product-form-image > img {
   width: 100px;
   margin: 10px;
+  
 }
 #create-product-btn {
   border: none;
-  background-color: #000000;
+  background-color: #D9CAB3;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -83,6 +93,7 @@
   display: inline-block;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  border-radius: 10px;
 }
 @media (max-width: 1200px) {
   .dashboard {
