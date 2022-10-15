@@ -6,7 +6,6 @@ const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
 const cloudinary = require("cloudinary");
 
-
 //Register Email for Newsletter
 exports.registerEmailForNewsletter = catchAsyncErrors(
   async (req, res, next) => {
@@ -21,10 +20,10 @@ exports.registerEmailForNewsletter = catchAsyncErrors(
       ],
     };
     let JSONData = JSON.stringify(data);
-    const url = "https://us17.api.mailchimp.com/3.0/lists/9a4122f072";
+    const url = process.env.NEWSLETTER_URL;
     let options = {
       method: "POST",
-      auth: "chirag:50fee74c03f6bd054c833392824c5ac1-us17",
+      auth: process.env.NEWSLETTER_AUTH,
     };
     let request = https.request(url, options, function (response) {
       if (response.statusCode === 200) {

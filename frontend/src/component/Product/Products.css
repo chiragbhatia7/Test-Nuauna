@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
 
 .products-section {
   min-height: 100vh;
@@ -7,34 +7,31 @@
   justify-content: initial;
   /* align-items: initial; */
   background-color: #c6b9a4;
-  
 }
 .products-section h1 {
-  width:100%;
+  width: 100%;
   font-size: 72px;
   text-align: center;
- align-self: initial;
- font-family: 'Montserrat', sans-serif;
- font-weight: 500;
- background-image: linear-gradient(rgba(0, 0, 0), rgba(0, 0, 0, 0.0));
- padding:  40px 100px ;
- 
+  align-self: initial;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-image: linear-gradient(rgba(0, 0, 0), rgba(0, 0, 0, 0));
+  padding: 40px 100px;
+  color: white;
 }
 .products-flex {
   display: flex;
   /* justify-content: space-evenly; */
   margin: 0%;
-  
 }
 .product-filters {
   width: 20%;
-  padding:  20px;
+  padding: 20px;
   height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: left;
   /* position: fixed; */
-
 }
 .category-box li {
   list-style: none;
@@ -44,7 +41,6 @@
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
-  
 }
 .paginationBox {
   display: flex;

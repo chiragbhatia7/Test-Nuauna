@@ -13,8 +13,8 @@
 }
 .page-not-found p {
   border: none;
-  background-color: #000000;
-  color: white;
+  background-color: black;
+  color: #D9CAB3;
   padding: 5px 22px;
   text-align: center;
   text-decoration: none;
