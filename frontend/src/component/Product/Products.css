@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   justify-content: initial;
-  /* align-items: initial; */
   background-color: #c6b9a4;
 }
 .products-section h1 {
@@ -16,12 +15,11 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   background-image: linear-gradient(rgba(0, 0, 0), rgba(0, 0, 0, 0));
-  padding: 40px 100px;
   color: white;
+  padding: 100px 0;
 }
 .products-flex {
   display: flex;
-  /* justify-content: space-evenly; */
   margin: 0%;
 }
 .product-filters {
@@ -31,7 +29,6 @@
   display: flex;
   flex-direction: column;
   justify-content: left;
-  /* position: fixed; */
 }
 .category-box li {
   list-style: none;

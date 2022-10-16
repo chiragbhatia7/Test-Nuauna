@@ -49,6 +49,8 @@
   border: 1px solid black;
   border-radius: 4px;
   outline: none;
+  color: black;
+  font-weight: bolder;
   background-color: #d9cab3;
 }
 #create-product-form-file > input::file-selector-button {
