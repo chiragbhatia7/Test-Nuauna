@@ -103,7 +103,7 @@ const Home = () => {
               Subscribe To Our Newsletter And Get Notified About Latest Updates,
               Offers And Products!
             </p>
-            <form onSubmit={(e) => registerEmail(e)} action="/">
+            <form className="newsletter-section-form" onSubmit={(e) => registerEmail(e)} action="/">
               <input
                 className="newsletter-input-field"
                 type="email"
