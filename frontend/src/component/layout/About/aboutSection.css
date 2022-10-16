@@ -1,23 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
 .aboutSection {
   min-height: 80vh;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  width: 100%;
   flex-direction: column;
   background-color: #c6b9a4;
   color: rgb(0, 1, 1);
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .aboutSection > h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: rgb(9, 9, 9);
-  margin: 2vmax;
-  align-items: center;
   padding-left: 40%;
   padding-right: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
 }
 
 .aboutSection > p {
